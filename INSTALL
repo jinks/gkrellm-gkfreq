@@ -1,2 +1,15 @@
-run make then copy gkfreq.so to your gkrellm2 plugins directory
-'make install' will copy the file to ~/.gkrellm2/plugins/
+Steps to install:
+=================
+
+To compile the gkfreq_cpuX.so files:
+    make
+
+Then install in either /usr/lib/gkrellm2/plugins/ by doing
+    make install
+or in /usr/local/lib/gkrellm2/plugins/ by doing
+    make install-local
+or in ~/.gkrellm2/plugins by doing
+    make install-home
+
+Now the plugin is installed. Start GKrellM and enable gkfreq_cpuX (one per 
+CPU).

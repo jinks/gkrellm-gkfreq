@@ -1,5 +1,30 @@
 /*
- * version 1.0
+    GKrellM-gkfreq
+    
+    A plugin to GKrellM that displays the current CPU frequencies.
+    
+    Authors:
+    Brad Davis <brad@peakunix.net> (version 1.0)
+    Erik Kjellson <erikiiofph7@users.sourceforge.net>
+    
+    Copyright (C) 2005-2010
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*/
+
+/*
  * Using code from gkx86info http://anchois.free.fr/
  * with patches from whatdoineed2do@yahoo.co.uk
  * and knefas@gmail.com
@@ -11,8 +36,8 @@
 #include <string.h>
 #include <unistd.h>
 
-#define	CONFIG_NAME	"gkfreq"
-#define	STYLE_NAME	"gkfreq"
+#define	CONFIG_NAME	"gkfreq_cpu7"
+#define	STYLE_NAME	"gkfreq_cpu7"
 
 static GkrellmMonitor	*monitor;
 static GkrellmPanel	*panel;
@@ -31,7 +56,7 @@ static
 void read_MHz(char* buffer_, size_t bufsz_)
 {
    FILE *f;
-   if ( (f = fopen("/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq", "r")) == NULL) {
+   if ( (f = fopen("/sys/devices/system/cpu/cpu7/cpufreq/scaling_cur_freq", "r")) == NULL) {
 
        snprintf(buffer_, bufsz_, "n/a MHz");
    }
