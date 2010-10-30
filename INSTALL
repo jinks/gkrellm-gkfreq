@@ -1,0 +1,2 @@
+run make then copy gkfreq.so to your gkrellm2 plugins directory
+'make install' will copy the file to ~/.gkrellm2/plugins/
